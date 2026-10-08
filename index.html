@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VP Tech Labs | Mobile Apps, Web Apps, Billing Software & Creative Design</title>
+  <meta name="description" content="VP Tech Labs (Vijay & Prafeep Enterprise) — Next-gen Mobile App Development, Enterprise Web Applications, Intelligent Billing & Invoicing Software, E-Commerce Portals, and Creative Brochure Design." />
+  
+  <!-- Open Graph / Meta for Social & Claude Reviewers -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="VP Tech Labs - Mobile Apps, Billing Systems, Web Platforms & AI" />
+  <meta property="og:description" content="We build high-performance Mobile Apps, Billing & Invoicing Systems, SaaS Web Platforms, and Claude-powered AI solutions." />
+  <meta property="og:image" content="https://global.campuskloud.io/api/v1/assets/vp-preview.png" />
+  
+  <!-- Modern Typography (Outfit & Inter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient Gradient Background Glows -->
+  <div class="glow-sphere glow-1"></div>
+  <div class="glow-sphere glow-2"></div>
+  <div class="glow-sphere glow-3"></div>
+
+  <!-- Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="#hero" class="brand-logo">
+        <div class="logo-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <path d="M16 2L28 8V24L16 30L4 24V8L16 2Z" stroke="url(#logoGrad)" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M10 11L16 22L22 11" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16 11V22" stroke="url(#logoGrad)" stroke-width="1.8" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="logoGrad" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#38BDF8"/>
+                <stop offset="0.5" stop-color="#6366F1"/>
+                <stop offset="1" stop-color="#A855F7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">VP TECH LABS</span>
+          <span class="brand-sub">VIJAY & PRAFEEP ENTERPRISE</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" id="navMenu">
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#billing-software" class="nav-link">Billing Software</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#brochure-section" class="nav-link">Brochure Design</a>
+        <a href="#ai-capabilities" class="nav-link">AI & Cloud</a>
+        <a href="#calculator" class="nav-link">Estimator</a>
+        <a href="#contact" class="nav-btn-mobile nav-link">Get in Touch</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="nav-actions">
+        <button class="brochure-pill-btn" onclick="openBrochureModal()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          <span>View Brochure</span>
+        </button>
+        <a href="#contact" class="primary-btn glow-effect">
+          <span>Start a Project</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <!-- Badge -->
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span class="badge-text">VP Tech Labs • Mobile Apps • Billing Software • Claude AI</span>
+          <span class="badge-highlight">Enterprise Grade</span>
+        </div>
+
+        <!-- Main Title -->
+        <h1 class="hero-title">
+          Engineering High-Performance <br />
+          <span class="gradient-text">Mobile Apps, Billing Systems</span> & <br class="hero-br" />
+          Enterprise Web Platforms.
+        </h1>
+
+        <p class="hero-desc">
+          Founded by <strong>Vijay & Prafeep (VP)</strong>, we architect custom cross-platform Mobile Apps, automated Billing & Invoicing engines, 
+          enterprise SaaS portals, and luxury digital brochures with seamless Claude AI & multi-tenant cloud integrations.
+        </p>
+
+        <!-- CTAs -->
+        <div class="hero-cta-group">
+          <a href="#services" class="primary-btn hero-btn glow-effect">
+            <span>Explore Services</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+          </a>
+          <button class="secondary-btn hero-btn" onclick="openBrochureModal()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Company Brochure</span>
+          </button>
+          <a href="#calculator" class="tertiary-btn hero-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+            <span>Calculate Project Cost</span>
+          </a>
+        </div>
+
+        <!-- Metrics Strip -->
+        <div class="hero-metrics">
+          <div class="metric-card">
+            <span class="metric-num">50,000+</span>
+            <span class="metric-label">Active Users Served</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-card">
+            <span class="metric-num">$10M+</span>
+            <span class="metric-label">Billing & Fees Processed</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-card">
+            <span class="metric-num">120+</span>
+            <span class="metric-label">Apps & Systems Deployed</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-card">
+            <span class="metric-num">99.98%</span>
+            <span class="metric-label">Production Uptime</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">VP CORE SPECIALIZATIONS</span>
+          <h2 class="section-title">Complete Digital & Software Engineering Suite</h2>
+          <p class="section-subtitle">
+            From intuitive iOS/Android mobile apps to mission-critical billing infrastructure and bespoke brochures, VP Tech Labs delivers state-of-the-art results.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1: Mobile App Dev -->
+          <div class="service-card" data-category="mobile">
+            <div class="service-icon-wrap icon-blue">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+            </div>
+            <h3 class="service-title">Mobile App Development</h3>
+            <p class="service-desc">
+              Cross-platform iOS & Android mobile apps engineered with React Native, Expo, Flutter, and native Swift/Kotlin. Fluid gesture navigation, offline caching, push notifications, and biometric authentication.
+            </p>
+            <ul class="service-tags">
+              <li>React Native & Expo</li>
+              <li>iOS & Android</li>
+              <li>Capacitor / Ionic</li>
+              <li>Biometrics & Offline Sync</li>
+            </ul>
+            <a href="#contact" class="service-link" onclick="preselectService('Mobile App Development')">
+              <span>Build a Mobile App</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Service 2: Billing & Invoicing Software -->
+          <div class="service-card" data-category="billing">
+            <div class="service-icon-wrap icon-emerald">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><line x1="6" y1="8" x2="18" y2="8"></line><line x1="6" y1="12" x2="14" y2="12"></line><line x1="6" y1="16" x2="10" y2="16"></line></svg>
+            </div>
+            <h3 class="service-title">Billing & Invoicing Software</h3>
+            <p class="service-desc">
+              Automated institutional fee collection, recurring E-NACH mandate debits, GST invoice generators, POS integrations, and real-time reconciliation with Razorpay and NTT Data (Atom).
+            </p>
+            <ul class="service-tags">
+              <li>GST Invoicing</li>
+              <li>Fee Collections</li>
+              <li>E-NACH Recurring Mandates</li>
+              <li>Automated Receipts & SMS</li>
+            </ul>
+            <a href="#billing-software" class="service-link">
+              <span>Explore Billing Systems</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Service 3: Enterprise Web Applications -->
+          <div class="service-card" data-category="web">
+            <div class="service-icon-wrap icon-purple">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            </div>
+            <h3 class="service-title">Enterprise Web Platforms & SaaS</h3>
+            <p class="service-desc">
+              Scalable multi-tenant cloud applications, admin portals, and high-concurrency microservices built with Next.js, React, FastAPI, Node.js, and PostgreSQL.
+            </p>
+            <ul class="service-tags">
+              <li>React & Next.js</li>
+              <li>FastAPI & Python</li>
+              <li>Multi-Tenant SaaS</li>
+              <li>PostgreSQL / Wasabi S3</li>
+            </ul>
+            <a href="#contact" class="service-link" onclick="preselectService('Enterprise Web Apps')">
+              <span>Build a Web Platform</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Service 4: Brochure & UI/UX Design -->
+          <div class="service-card" data-category="design">
+            <div class="service-icon-wrap icon-amber">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+            </div>
+            <h3 class="service-title">Brochure & Digital Brand Design</h3>
+            <p class="service-desc">
+              High-impact corporate brochures, interactive digital flipbooks, product prospectuses, Figma design tokens, and print-ready 300 DPI luxury marketing collateral.
+            </p>
+            <ul class="service-tags">
+              <li>Digital PDF Brochures</li>
+              <li>Interactive Flipbooks</li>
+              <li>Figma UI/UX Systems</li>
+              <li>Brand Identity & Logos</li>
+            </ul>
+            <a href="#brochure-section" class="service-link">
+              <span>View Brochure Showcase</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Service 5: E-Commerce Platforms -->
+          <div class="service-card" data-category="ecommerce">
+            <div class="service-icon-wrap icon-rose">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+            </div>
+            <h3 class="service-title">E-Commerce & Digital Storefronts</h3>
+            <p class="service-desc">
+              Custom online stores with unified inventory management, fast checkout flows, multi-currency support, order logistics tracking, and discount engine automation.
+            </p>
+            <ul class="service-tags">
+              <li>Custom Storefronts</li>
+              <li>Checkout Optimization</li>
+              <li>Multi-Vendor Stores</li>
+              <li>Inventory & Logistics</li>
+            </ul>
+            <a href="#contact" class="service-link" onclick="preselectService('E-Commerce Solutions')">
+              <span>Launch an E-Store</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+
+          <!-- Service 6: Claude AI & Intelligent Systems -->
+          <div class="service-card" data-category="ai">
+            <div class="service-icon-wrap icon-cyan">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            </div>
+            <h3 class="service-title">Claude AI & Smart Automation</h3>
+            <p class="service-desc">
+              Production LLM integrations powered by Anthropic Claude 3.5 Sonnet & Haiku: automated OCR document parsing, smart analytics, automated grading, and conversational chatbots.
+            </p>
+            <ul class="service-tags">
+              <li>Claude 3.5 Sonnet</li>
+              <li>Smart Document OCR</li>
+              <li>Conversational AI</li>
+              <li>Intelligent Workflows</li>
+            </ul>
+            <a href="#ai-capabilities" class="service-link">
+              <span>Explore AI Systems</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Deep-Dive Billing Software Showcase -->
+    <section class="billing-section" id="billing-software">
+      <div class="container">
+        <div class="billing-showcase-card">
+          <div class="billing-content">
+            <span class="section-tag">VP BILLING ENGINE</span>
+            <h2 class="billing-title">Intelligent Billing, Invoicing & Autonomous Fee Systems</h2>
+            <p class="billing-desc">
+              Eliminate manual reconciliation errors and accelerate cash flow with VP Tech Labs' enterprise billing engine. 
+              Supports automatic student fee calculations, instant GST tax invoices, recurring E-NACH bank debits, and multi-gateway fallbacks.
+            </p>
+            <div class="billing-features-grid">
+              <div class="b-card-mini">
+                <div class="mini-icon">⚡</div>
+                <h4>Instant Payment Links</h4>
+                <p>Generate one-click payment URLs and QR codes sent via WhatsApp and SMS.</p>
+              </div>
+              <div class="b-card-mini">
+                <div class="mini-icon">💳</div>
+                <h4>Dual-Gateway Redundancy</h4>
+                <p>Zero downtime with automated failover between Razorpay and NTT Data (Atom).</p>
+              </div>
+              <div class="b-card-mini">
+                <div class="mini-icon">🔄</div>
+                <h4>Automated E-NACH Mandates</h4>
+                <p>Register recurring monthly/term debits directly through NPCI-compliant e-mandates.</p>
+              </div>
+              <div class="b-card-mini">
+                <div class="mini-icon">📄</div>
+                <h4>1-Click GST Invoicing</h4>
+                <p>Automated printable PDF tax receipts with digital signatures & custom institutional watermarks.</p>
+              </div>
+            </div>
+            <div class="billing-cta-group">
+              <a href="#contact" class="primary-btn glow-effect" onclick="preselectService('Billing & Invoicing Software')">
+                <span>Deploy VP Billing Software</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#calculator" class="secondary-btn">
+                <span>Estimate Billing Scope</span>
+              </a>
+            </div>
+          </div>
+          <div class="billing-preview-graphic">
+            <div class="invoice-mockup">
+              <div class="inv-head">
+                <div>
+                  <div class="inv-badge">TAX INVOICE / RECEIPT</div>
+                  <div class="inv-no">#VP-2026-0892</div>
+                </div>
+                <div class="inv-status">PAID ✓</div>
+              </div>
+              <div class="inv-divider"></div>
+              <div class="inv-row">
+                <span>Tuition & Laboratory Fee</span>
+                <strong>$4,500.00</strong>
+              </div>
+              <div class="inv-row">
+                <span>Campus Tech Infrastructure</span>
+                <strong>$750.00</strong>
+              </div>
+              <div class="inv-row">
+                <span>GST Tax (18%)</span>
+                <strong>$945.00</strong>
+              </div>
+              <div class="inv-total-row">
+                <span>Total Amount Collected:</span>
+                <span class="inv-total">$6,195.00</span>
+              </div>
+              <div class="inv-footer">
+                <small>Processed via VP Secure Gateway • Automated E-NACH Synced</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Portfolio & Case Studies -->
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">VP PORTFOLIO</span>
+          <h2 class="section-title">Featured Products & Deployments</h2>
+          <p class="section-subtitle">Explore live systems, enterprise platforms, and mobile apps engineered by Vijay & Prafeep.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="mobile">Mobile Apps</button>
+          <button class="filter-btn" data-filter="billing">Billing & Fintech</button>
+          <button class="filter-btn" data-filter="web">Web & SaaS</button>
+          <button class="filter-btn" data-filter="ai">AI & Analytics</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1 -->
+          <div class="project-card" data-category="mobile erp">
+            <div class="project-banner banner-gradient-1">
+              <div class="project-badge">Mobile App (iOS & Android)</div>
+              <div class="project-mockup-graphic">📱 CampusKloud v2 Mobile</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">CampusKloud Multi-Tenant Mobile App</h3>
+              <p class="project-desc">
+                High-performance React Native & Expo mobile app serving 50k+ students, parents, and faculty across Shaheen Group, TBAKC, and Silver Spring institutions.
+              </p>
+              <div class="project-tech-stack">
+                <span>React Native</span>
+                <span>FastAPI</span>
+                <span>Wasabi S3</span>
+                <span>Offline Cache</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card" data-category="billing web ecommerce">
+            <div class="project-banner banner-gradient-3">
+              <div class="project-badge">Billing Software & Fintech</div>
+              <div class="project-mockup-graphic">💳 VP Fee & E-NACH Engine</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Autonomous Fee Collection & Mandate Billing</h3>
+              <p class="project-desc">
+                Enterprise billing software handling tuition, hostel, and exam fees with instant automated reconciliation, Razorpay, NTT Data (Atom), and E-NACH mandate recurring debits.
+              </p>
+              <div class="project-tech-stack">
+                <span>Razorpay API</span>
+                <span>NTT Data</span>
+                <span>E-NACH Mandates</span>
+                <span>GST Invoicing</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card" data-category="ai web">
+            <div class="project-banner banner-gradient-2">
+              <div class="project-badge">Claude AI Integration</div>
+              <div class="project-mockup-graphic">🤖 Claude Smart OCR Engine</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Intelligent Document Extraction Pipeline</h3>
+              <p class="project-desc">
+                Automated document OCR pipeline extracting marks cards, admission forms, and identity cards into structured SQL data with 99.4% accuracy using Claude 3.5 Sonnet.
+              </p>
+              <div class="project-tech-stack">
+                <span>Claude 3.5 Sonnet</span>
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>PostgreSQL</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card" data-category="web erp">
+            <div class="project-banner banner-gradient-4">
+              <div class="project-badge">Enterprise SaaS</div>
+              <div class="project-mockup-graphic">📊 VP Admin Command Center</div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Institutional Management & Academic Analytics</h3>
+              <p class="project-desc">
+                Real-time admin console for attendance tracking, exam score bell-curve analytics, timetable automation, and role-based permissions matrix.
+              </p>
+              <div class="project-tech-stack">
+                <span>Next.js</span>
+                <span>Chart.js</span>
+                <span>FastAPI</span>
+                <span>Redis</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brochure & Graphic Design Showcase Section -->
+    <section class="brochure-section" id="brochure-section">
+      <div class="container">
+        <div class="brochure-showcase-card">
+          <div class="brochure-content">
+            <span class="section-tag">BRAND IDENTITY & BROCHURES</span>
+            <h2 class="brochure-title">Creative Brochure & Digital Catalogue Design</h2>
+            <p class="brochure-desc">
+              We design visually stunning, high-converting corporate brochures, interactive product flipbooks, 
+              institutional prospectuses, and marketing kits ready for both high-resolution digital sharing and luxury offset print.
+            </p>
+            <div class="brochure-features">
+              <div class="b-feat"><svg width="18" height="18" fill="none" stroke="#38BDF8" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Interactive Digital Flipbooks</div>
+              <div class="b-feat"><svg width="18" height="18" fill="none" stroke="#38BDF8" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Print-Ready 300 DPI CMYK Vectors</div>
+              <div class="b-feat"><svg width="18" height="18" fill="none" stroke="#38BDF8" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Custom 3D Graphics & Typography</div>
+              <div class="b-feat"><svg width="18" height="18" fill="none" stroke="#38BDF8" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Multipage Corporate Prospectus</div>
+            </div>
+            <div class="brochure-btn-group">
+              <button class="primary-btn glow-effect" onclick="openBrochureModal()">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                <span>Preview Interactive Brochure</span>
+              </button>
+              <a href="#contact" class="secondary-btn" onclick="preselectService('Brochure & Graphic Design')">
+                <span>Order Custom Brochure</span>
+              </a>
+            </div>
+          </div>
+          <div class="brochure-preview-art" onclick="openBrochureModal()">
+            <div class="brochure-art-card page-1">
+              <div class="art-header">
+                <span class="art-pill">VP TECH LABS</span>
+                <span class="art-year">2026 EDITION</span>
+              </div>
+              <h4 class="art-title">Corporate Capabilities & Brochure</h4>
+              <p class="art-snippet">Mobile Apps • Billing Software • Claude AI</p>
+              <div class="art-footer">
+                <span class="art-cta">Click to Open Interactive Flipbook ↗</span>
+              </div>
+            </div>
+            <div class="brochure-art-card page-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Claude AI & Cloud Capabilities Section -->
+    <section class="ai-section" id="ai-capabilities">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">AI & CLOUD INNOVATION</span>
+          <h2 class="section-title">Built with Anthropic Claude & High-Speed Cloud</h2>
+          <p class="section-subtitle">
+            We integrate state-of-the-art AI models into core production software to automate intelligence, eliminate billing mistakes, and unlock conversational superpowers.
+          </p>
+        </div>
+
+        <div class="ai-grid">
+          <div class="ai-card">
+            <div class="ai-badge">Claude 3.5 Sonnet</div>
+            <h3>Intelligent Student & Admin Assistants</h3>
+            <p>Conversational assistants that synthesize student grade records, answer institutional FAQs in multi-language scripts, and generate personalized academic reports.</p>
+          </div>
+          <div class="ai-card">
+            <div class="ai-badge">Computer Vision & OCR</div>
+            <h3>Smart Document & Identity Parsing</h3>
+            <p>Automated ingestion of student transcripts, ID proofs, and medical records into verified structured database rows with instant bounding-box confidence checks.</p>
+          </div>
+          <div class="ai-card">
+            <div class="ai-badge">Billing AI</div>
+            <h3>Fee & Cashflow Forecasting</h3>
+            <p>Predictive machine learning models identifying fee defaulter risks, automating reminder sequences, and forecasting quarterly collections.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Project Cost Estimator -->
+    <section class="calculator-section" id="calculator">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">INSTANT ESTIMATE</span>
+          <h2 class="section-title">Project Scope & Cost Calculator</h2>
+          <p class="section-subtitle">Select your desired platforms and capabilities to calculate an estimated project scope and timeline.</p>
+        </div>
+
+        <div class="calculator-card">
+          <div class="calc-options">
+            <div class="calc-group">
+              <label class="calc-label">1. Select Target Platforms & Modules</label>
+              <div class="calc-chips" id="platformChips">
+                <button type="button" class="chip active" data-value="mobile" data-price="2500">Mobile App (iOS & Android)</button>
+                <button type="button" class="chip active" data-value="billing" data-price="1800">Billing & Invoicing System</button>
+                <button type="button" class="chip" data-value="web" data-price="2000">Web Application / SaaS</button>
+                <button type="button" class="chip" data-value="ecommerce" data-price="1800">E-Commerce & Storefront</button>
+                <button type="button" class="chip" data-value="brochure" data-price="500">Brochure & Branding Kit</button>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label">2. Advanced Features</label>
+              <div class="calc-chips" id="featureChips">
+                <button type="button" class="chip active" data-value="claude-ai" data-price="1200">Claude AI Assistant / OCR</button>
+                <button type="button" class="chip active" data-value="enach" data-price="800">E-NACH Recurring AutoPay</button>
+                <button type="button" class="chip" data-value="auth" data-price="600">Multi-Role Auth & Biometrics</button>
+                <button type="button" class="chip" data-value="push" data-price="400">Push Notifications & SMS</button>
+              </div>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label">3. Desired Delivery Timeline</label>
+              <div class="calc-chips timeline-chips" id="timelineChips">
+                <button type="button" class="chip" data-value="urgent" data-mult="1.2">Fast-Track (3-4 Weeks)</button>
+                <button type="button" class="chip active" data-value="standard" data-mult="1.0">Standard (6-8 Weeks)</button>
+                <button type="button" class="chip" data-value="enterprise" data-mult="0.95">Enterprise / Phased (12+ Weeks)</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="calc-summary">
+            <div class="summary-header">Estimated Investment</div>
+            <div class="summary-price" id="calcTotal">$6,300</div>
+            <div class="summary-timeline" id="calcTimeline">Estimated Timeline: ~6 - 8 Weeks</div>
+            <p class="summary-note">Includes complete UI/UX design, production backend, deployment, App Store / Play Store submission, and 60 days warranty.</p>
+            <button class="primary-btn w-full glow-effect" onclick="applyEstimateToContact()">
+              <span>Book Discovery Call with this Scope</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact & Consultation Form -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-info">
+            <span class="section-tag">LET'S COLLABORATE</span>
+            <h2 class="contact-title">Have a project in mind? Let's build something exceptional.</h2>
+            <p class="contact-desc">
+              Whether you need a custom mobile application, billing & invoicing software, a scalable cloud platform, e-commerce infrastructure, or creative corporate brochures, Vijay & Prafeep (VP) are ready to assist.
+            </p>
+
+            <div class="contact-details-list">
+              <div class="c-item">
+                <div class="c-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+                <div>
+                  <div class="c-label">Official Business Email</div>
+                  <a href="mailto:vijay@unique-creations.biz" class="c-val">vijay@unique-creations.biz</a>
+                </div>
+              </div>
+              <div class="c-item">
+                <div class="c-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+                <div>
+                  <div class="c-label">Leadership</div>
+                  <div class="c-val">Vijay & Prafeep (VP Tech Labs)</div>
+                </div>
+              </div>
+              <div class="c-item">
+                <div class="c-icon"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg></div>
+                <div>
+                  <div class="c-label">Response Guarantee</div>
+                  <div class="c-val">Direct response within 2 hours</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+            <h3 class="form-title">Send Project Inquiry</h3>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nameInput">Your Full Name *</label>
+                <input type="text" id="nameInput" required placeholder="e.g. Rahul Sharma" />
+              </div>
+              <div class="form-group">
+                <label for="emailInput">Email Address *</label>
+                <input type="email" id="emailInput" required placeholder="name@company.com" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="serviceSelect">Primary Service Needed *</label>
+              <select id="serviceSelect" required>
+                <option value="Mobile App Development">Mobile App Development (iOS / Android)</option>
+                <option value="Billing & Invoicing Software">Billing & Invoicing Software / Fee Systems</option>
+                <option value="Enterprise Web Apps">Enterprise Web App / SaaS Platform</option>
+                <option value="E-Commerce Solutions">E-Commerce Store & Payment Gateways</option>
+                <option value="Brochure & Graphic Design">Brochure Design & Brand Identity</option>
+                <option value="Claude AI & Automation">Claude AI Integration & Smart OCR</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="messageInput">Project Details & Requirements *</label>
+              <textarea id="messageInput" rows="4" required placeholder="Tell us about your project goals, features needed, and timeline..."></textarea>
+            </div>
+
+            <button type="submit" class="primary-btn w-full glow-effect" id="submitBtn">
+              <span>Send Message</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+            </button>
+            <div id="formFeedback" class="form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Brochure Modal -->
+  <div class="modal-backdrop" id="brochureModal" onclick="closeBrochureModalOnBackdrop(event)">
+    <div class="modal-dialog brochure-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <h3>VP Tech Labs Official Digital Brochure</h3>
+          <span class="modal-subtitle">Interactive Presentation • Vijay & Prafeep Enterprise</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeBrochureModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="brochure-viewer">
+          <!-- Page 1 -->
+          <div class="flip-page active" id="bPage1">
+            <div class="b-cover">
+              <div class="b-logo">VP TECH LABS</div>
+              <h2>Empowering Modern Enterprises with Scalable Code & Bespoke Design</h2>
+              <p>Mobile Apps • Billing Software • Enterprise Web • E-Commerce • Claude AI</p>
+              <div class="b-highlights">
+                <span>50k+ Active Users</span>
+                <span>$10M+ Billing Handled</span>
+                <span>Claude AI Powered</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 2 -->
+          <div class="flip-page" id="bPage2">
+            <div class="b-page-content">
+              <h3>Our Engineering Expertise</h3>
+              <div class="b-grid">
+                <div class="b-item">
+                  <h4>📱 Mobile Apps</h4>
+                  <p>React Native, Flutter, Swift, Kotlin, offline sync, push notifications, and biometrics.</p>
+                </div>
+                <div class="b-item">
+                  <h4>🧾 Billing & Invoicing</h4>
+                  <p>Fee collections, GST receipts, E-NACH mandates, Razorpay & NTT Data gateways.</p>
+                </div>
+                <div class="b-item">
+                  <h4>💻 Web & SaaS</h4>
+                  <p>FastAPI, React, Angular, Next.js, Node.js, and multi-tenant architectures.</p>
+                </div>
+                <div class="b-item">
+                  <h4>🤖 Claude AI</h4>
+                  <p>Document OCR, automated student feedback, conversational assistants, and grading automation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 3 -->
+          <div class="flip-page" id="bPage3">
+            <div class="b-page-content">
+              <h3>Brochure & UI/UX Design Services</h3>
+              <p>We craft corporate identities that command attention across digital and physical mediums:</p>
+              <ul class="b-list">
+                <li>Multi-page digital PDF brochures with interactive links.</li>
+                <li>Full Figma UI/UX wireframes, prototypes, and design tokens.</li>
+                <li>Print-ready 300 DPI vector brochures, business profiles, and pitch decks.</li>
+                <li>Custom 3D icons, illustrations, and typography branding.</li>
+              </ul>
+              <div class="b-callout">
+                <strong>Contact Vijay & Prafeep:</strong> vijay@unique-creations.biz
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="brochure-controls">
+          <button class="b-nav-btn" onclick="prevBrochurePage()">← Previous Page</button>
+          <span class="b-page-indicator" id="bPageIndicator">Page 1 of 3</span>
+          <button class="b-nav-btn" onclick="nextBrochurePage()">Next Page →</button>
+          <button class="b-download-btn" onclick="downloadBrochureSim()">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Download PDF</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating AI Assistant Widget -->
+  <div class="ai-widget-wrapper" id="aiWidget">
+    <button class="ai-widget-trigger" onclick="toggleAiWidget()" aria-label="Open AI Assistant">
+      <div class="ai-widget-icon">🤖</div>
+      <span class="ai-widget-pill">Ask VP AI Assistant</span>
+    </button>
+
+    <div class="ai-chat-window" id="aiChatWindow">
+      <div class="ai-chat-header">
+        <div class="ai-chat-title-group">
+          <span class="ai-online-dot"></span>
+          <div>
+            <h4>Claude Assistant</h4>
+            <span>VP Tech Labs AI</span>
+          </div>
+        </div>
+        <button class="ai-close-btn" onclick="toggleAiWidget()">&times;</button>
+      </div>
+
+      <div class="ai-chat-messages" id="aiMessages">
+        <div class="ai-msg bot">
+          Hello! I'm the VP Tech Labs AI Assistant. Ask me anything about our Mobile Apps, Billing Software, E-Commerce, or Brochure Design services!
+        </div>
+      </div>
+
+      <div class="ai-quick-queries">
+        <button onclick="askAi('What billing software features do you offer?')">🧾 Billing Software?</button>
+        <button onclick="askAi('What mobile tech stack do you use?')">📱 Mobile Stack?</button>
+        <button onclick="askAi('Do you design corporate brochures?')">🎨 Brochure Design?</button>
+        <button onclick="askAi('How do you integrate Claude AI?')">🤖 Claude AI?</button>
+      </div>
+
+      <div class="ai-chat-input-bar">
+        <input type="text" id="aiUserInput" placeholder="Ask about services or pricing..." onkeydown="if(event.key==='Enter') sendAiMessage()" />
+        <button onclick="sendAiMessage()" aria-label="Send">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-col-main">
+        <div class="brand-logo footer-logo">
+          <div class="logo-icon-wrap">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+              <path d="M16 2L28 8V24L16 30L4 24V8L16 2Z" stroke="#38BDF8" stroke-width="2.5"/>
+              <circle cx="16" cy="16" r="3" fill="#38BDF8"/>
+            </svg>
+          </div>
+          <span class="brand-title">VP TECH LABS</span>
+        </div>
+        <p class="footer-about">
+          Engineering high-performance software, cross-platform mobile apps, automated billing systems, and Claude-powered AI solutions. Founded by Vijay & Prafeep.
+        </p>
+        <div class="footer-email">
+          <strong>Direct Contact:</strong> <a href="mailto:vijay@unique-creations.biz">vijay@unique-creations.biz</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Solutions</h4>
+        <ul>
+          <li><a href="#services">Mobile App Development</a></li>
+          <li><a href="#billing-software">Billing & Invoicing Systems</a></li>
+          <li><a href="#services">Enterprise Web Platforms</a></li>
+          <li><a href="#services">E-Commerce & Gateways</a></li>
+          <li><a href="#brochure-section">Brochure & UI/UX Design</a></li>
+          <li><a href="#ai-capabilities">Claude AI Integrations</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#portfolio">Featured Case Studies</a></li>
+          <li><a href="#calculator">Project Cost Estimator</a></li>
+          <li><a href="javascript:void(0)" onclick="openBrochureModal()">Download Brochure</a></li>
+          <li><a href="#contact">Contact Vijay & Prafeep</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <div>© 2026 VP Tech Labs (Vijay & Prafeep). All rights reserved.</div>
+        <div class="footer-links">
+          <span>Powered by Claude AI & Modern Cloud</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "vp-tech-labs",
+  "version": "1.0.0",
+  "description": "VP Tech Labs (Vijay & Prafeep) - Modern Software, Mobile Apps, Billing Systems & AI Solutions",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 .",
+    "deploy:vercel": "npx vercel",
+    "deploy:netlify": "npx netlify deploy --prod"
+  },
+  "keywords": [
+    "mobile-apps",
+    "billing-software",
+    "react-native",
+    "web-development",
+    "claude-ai",
+    "brochure-design"
+  ],
+  "author": "Vijay & Prafeep (VP Tech Labs)",
+  "license": "MIT"
+}
