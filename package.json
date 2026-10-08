@@ -1,7 +1,7 @@
 {
   "name": "vp-tech-labs",
   "version": "1.0.0",
-  "description": "VP Tech Labs (Vijay & Prafeep) - Modern Software, Mobile Apps, Billing Systems & AI Solutions",
+  "description": "VP Tech Labs - Modern Software, Mobile Apps, Billing Systems & Enterprise Cloud Solutions",
   "main": "index.html",
   "scripts": {
     "start": "npx serve -l 3000 .",
@@ -14,9 +14,9 @@
     "billing-software",
     "react-native",
     "web-development",
-    "claude-ai",
+    "cloud-infrastructure",
     "brochure-design"
   ],
-  "author": "Vijay & Prafeep (VP Tech Labs)",
+  "author": "VP Tech Labs",
   "license": "MIT"
 }

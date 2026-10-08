@@ -1,14 +1,16 @@
 /* ==========================================================================
-   VP TECH LABS (VIJAY & PRAFEEP) - INTERACTIVE LOGIC & SCRIPTS
+   VP TECH LABS - INTERACTIVE LOGIC & SCRIPTS
    ========================================================================== */
 
 // 1. Header Blur on Scroll
 window.addEventListener('scroll', () => {
   const header = document.getElementById('siteHeader');
-  if (window.scrollY > 40) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
+  if (header) {
+    if (window.scrollY > 30) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
   }
 });
 
@@ -19,17 +21,34 @@ const navMenu = document.getElementById('navMenu');
 if (menuToggle && navMenu) {
   menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
   });
 
   // Close menu on link click
   document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
       navMenu.classList.remove('active');
+      menuToggle.classList.remove('active');
     });
   });
 }
 
-// 3. Portfolio Category Filtering
+// 3. Hero Interactive Showcase Tabs
+function switchBannerTab(tabId, btn) {
+  document.querySelectorAll('#heroBannerTabs .w-tab').forEach(t => t.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+
+  document.querySelectorAll('.banner-panel').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  const activePanel = document.getElementById(`panel-${tabId}`);
+  if (activePanel) {
+    activePanel.classList.add('active');
+  }
+}
+
+// 4. Portfolio Category Filtering
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
@@ -44,7 +63,8 @@ filterButtons.forEach(btn => {
       const category = card.getAttribute('data-category');
       if (filter === 'all' || (category && category.includes(filter))) {
         card.style.display = 'flex';
-        card.style.animation = 'fadeIn 0.35s ease forwards';
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
       } else {
         card.style.display = 'none';
       }
@@ -52,126 +72,59 @@ filterButtons.forEach(btn => {
   });
 });
 
-// 4. Interactive Brochure Modal Logic
-let currentBrochurePage = 1;
-const totalBrochurePages = 3;
+// 5. Capabilities & Tech Matrix Slider
+let currentSlideIndex = 0;
+const totalSlides = 5;
+let sliderAutoInterval = null;
 
-function openBrochureModal() {
-  const modal = document.getElementById('brochureModal');
-  if (modal) {
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    showBrochurePage(1);
+function goToSlide(index) {
+  currentSlideIndex = (index + totalSlides) % totalSlides;
+  
+  const track = document.getElementById('sliderTrack');
+  if (track) {
+    track.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
   }
-}
 
-function closeBrochureModal() {
-  const modal = document.getElementById('brochureModal');
-  if (modal) {
-    modal.classList.remove('open');
-    document.body.style.overflow = 'auto';
-  }
-}
-
-function closeBrochureModalOnBackdrop(event) {
-  if (event.target.id === 'brochureModal') {
-    closeBrochureModal();
-  }
-}
-
-function showBrochurePage(page) {
-  currentBrochurePage = page;
-  document.querySelectorAll('.flip-page').forEach((p, idx) => {
-    p.classList.toggle('active', idx + 1 === page);
+  // Update tabs
+  const tabs = document.querySelectorAll('#sliderTabsNav .s-nav-tab');
+  tabs.forEach((tab, idx) => {
+    tab.classList.toggle('active', idx === currentSlideIndex);
   });
 
-  const indicator = document.getElementById('bPageIndicator');
-  if (indicator) {
-    indicator.textContent = `Page ${page} of ${totalBrochurePages}`;
-  }
-}
-
-function nextBrochurePage() {
-  if (currentBrochurePage < totalBrochurePages) {
-    showBrochurePage(currentBrochurePage + 1);
-  } else {
-    showBrochurePage(1);
-  }
-}
-
-function prevBrochurePage() {
-  if (currentBrochurePage > 1) {
-    showBrochurePage(currentBrochurePage - 1);
-  } else {
-    showBrochurePage(totalBrochurePages);
-  }
-}
-
-function downloadBrochureSim() {
-  // Generate a beautiful printable view / prompt download
-  window.print();
-}
-
-// 5. Interactive Cost & Scope Calculator
-function initCalculator() {
-  const platformChips = document.querySelectorAll('#platformChips .chip');
-  const featureChips = document.querySelectorAll('#featureChips .chip');
-  const timelineChips = document.querySelectorAll('#timelineChips .chip');
-
-  function calculate() {
-    let basePrice = 0;
-    let selectedCount = 0;
-
-    platformChips.forEach(chip => {
-      if (chip.classList.contains('active')) {
-        basePrice += parseInt(chip.getAttribute('data-price') || '0', 10);
-        selectedCount++;
-      }
-    });
-
-    featureChips.forEach(chip => {
-      if (chip.classList.contains('active')) {
-        basePrice += parseInt(chip.getAttribute('data-price') || '0', 10);
-        selectedCount++;
-      }
-    });
-
-    let multiplier = 1.0;
-    let timelineText = 'Estimated Timeline: ~6 - 8 Weeks';
-
-    timelineChips.forEach(chip => {
-      if (chip.classList.contains('active')) {
-        multiplier = parseFloat(chip.getAttribute('data-mult') || '1.0');
-        const val = chip.getAttribute('data-value');
-        if (val === 'urgent') timelineText = 'Estimated Timeline: ~3 - 4 Weeks (Fast-Track)';
-        else if (val === 'enterprise') timelineText = 'Estimated Timeline: ~12+ Weeks (Enterprise / Phased)';
-      }
-    });
-
-    const finalTotal = Math.round(basePrice * multiplier);
-    const totalEl = document.getElementById('calcTotal');
-    const timelineEl = document.getElementById('calcTimeline');
-
-    if (totalEl) totalEl.textContent = `$${finalTotal.toLocaleString()}`;
-    if (timelineEl) timelineEl.textContent = timelineText;
-  }
-
-  // Attach chip click handlers
-  document.querySelectorAll('.calc-chips .chip').forEach(chip => {
-    chip.addEventListener('click', function() {
-      // If it belongs to timeline, single select
-      if (this.parentElement.id === 'timelineChips') {
-        this.parentElement.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-        this.classList.add('active');
-      } else {
-        // Multi-select for platforms and features
-        this.classList.toggle('active');
-      }
-      calculate();
-    });
+  // Update dots
+  const dots = document.querySelectorAll('#sliderDots .dot-ind');
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('active', idx === currentSlideIndex);
   });
+}
 
-  calculate();
+function nextSlide() {
+  goToSlide(currentSlideIndex + 1);
+}
+
+function prevSlide() {
+  goToSlide(currentSlideIndex - 1);
+}
+
+function startSliderAutoplay() {
+  stopSliderAutoplay();
+  sliderAutoInterval = setInterval(() => {
+    nextSlide();
+  }, 5000);
+}
+
+function stopSliderAutoplay() {
+  if (sliderAutoInterval) {
+    clearInterval(sliderAutoInterval);
+    sliderAutoInterval = null;
+  }
+}
+
+// Pause slider on hover
+const sliderContainer = document.querySelector('.tech-slider-container');
+if (sliderContainer) {
+  sliderContainer.addEventListener('mouseenter', stopSliderAutoplay);
+  sliderContainer.addEventListener('mouseleave', startSliderAutoplay);
 }
 
 // 6. Preselect service in Contact form
@@ -179,21 +132,6 @@ function preselectService(serviceName) {
   const select = document.getElementById('serviceSelect');
   if (select) {
     select.value = serviceName;
-  }
-}
-
-function applyEstimateToContact() {
-  const total = document.getElementById('calcTotal')?.textContent || '$5,000+';
-  const timeline = document.getElementById('calcTimeline')?.textContent || '';
-  const messageInput = document.getElementById('messageInput');
-  
-  if (messageInput) {
-    messageInput.value = `Hello VP Tech Labs,\n\nI calculated an estimated project scope (${total}, ${timeline}) on your website. I would like to schedule a discovery call to discuss our requirements and begin development.`;
-  }
-  
-  const contactSection = document.getElementById('contact');
-  if (contactSection) {
-    contactSection.scrollIntoView({ behavior: 'smooth' });
   }
 }
 
@@ -214,21 +152,22 @@ function handleContactSubmit(e) {
 
   setTimeout(() => {
     if (feedback) {
-      feedback.textContent = `Thank you ${name}! Your inquiry for "${service}" has been received. Our VP engineering team will reply to ${email} within 2 hours.`;
+      feedback.textContent = `Thank you ${name}! Your inquiry for "${service}" has been received. Our engineering studio will review your requirements and reply to ${email} within 2 hours.`;
       feedback.className = 'form-feedback success';
     }
     if (submitBtn) {
       submitBtn.innerHTML = '<span>Message Sent Successfully! ✓</span>';
-      submitBtn.style.background = '#10B981';
+      submitBtn.style.background = '#059669';
       submitBtn.style.opacity = '1';
     }
-    // Optional direct mailto trigger fallback
+    
+    // Prepare mailto link trigger fallback
     const mailtoLink = `mailto:vijay@unique-creations.biz?subject=VP Tech Inquiry: ${encodeURIComponent(service)}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0A%0D%0A${encodeURIComponent(message)}`;
-    console.log('Prepared Mailto:', mailtoLink);
-  }, 900);
+    console.log('Inquiry prepared:', mailtoLink);
+  }, 600);
 }
 
-// 8. Floating AI Assistant Widget Simulation
+// 8. Interactive Project Assistant Widget
 let isAiOpen = false;
 
 function toggleAiWidget() {
@@ -269,35 +208,35 @@ function sendAiMessage() {
   input.value = '';
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
-  // Bot typing simulation & response
+  // Response
   setTimeout(() => {
     const botMsgEl = document.createElement('div');
     botMsgEl.className = 'ai-msg bot';
     botMsgEl.innerHTML = generateAiResponse(userText);
     messagesContainer.appendChild(botMsgEl);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }, 600);
+  }, 450);
 }
 
 function generateAiResponse(query) {
   const q = query.toLowerCase();
 
-  if (q.includes('mobile') || q.includes('ios') || q.includes('android') || q.includes('react native')) {
-    return '📱 <strong>VP Mobile Engineering:</strong> We specialize in cross-platform iOS & Android apps built with <strong>React Native, Expo, and Flutter</strong>. Features include biometric login, 120Hz smooth animations, offline Wasabi/S3 caching, and multi-tenant school/enterprise architecture.';
-  } else if (q.includes('billing') || q.includes('fee') || q.includes('invoice') || q.includes('payment') || q.includes('ecommerce') || q.includes('e-commerce')) {
-    return '🧾 <strong>VP Billing & Invoicing Systems:</strong> We engineer high-security billing software, GST invoicing, student fee collection systems, recurring E-NACH mandates, and multi-gateway integrations (Razorpay, NTT Data/Atom, Stripe) with automated reconciliation.';
-  } else if (q.includes('brochure') || q.includes('design') || q.includes('graphic') || q.includes('ui') || q.includes('ux')) {
-    return '🎨 <strong>VP Creative Brochure & UI/UX:</strong> We produce interactive digital flipbooks, print-ready 300 DPI CMYK corporate prospectuses, complete Figma design systems, and brand identities tailored for educational and tech enterprises.';
-  } else if (q.includes('claude') || q.includes('ai') || q.includes('ocr') || q.includes('anthropic')) {
-    return '🤖 <strong>Claude AI Integration:</strong> Powered by Anthropic Claude 3.5 Sonnet and Haiku, we build automated OCR document extraction for marks cards/IDs, automated feedback generators, and smart conversational campus assistants.';
+  if (q.includes('mobile') || q.includes('ios') || q.includes('android') || q.includes('react native') || q.includes('flutter')) {
+    return '📱 <strong>Mobile Engineering:</strong> We specialize in cross-platform iOS & Android apps built with <strong>React Native, Expo, and Flutter</strong>. Features include biometric login, 120Hz smooth animations, offline Wasabi S3 caching, and multi-tenant architecture.';
+  } else if (q.includes('billing') || q.includes('fee') || q.includes('invoice') || q.includes('payment') || q.includes('enach')) {
+    return '🧾 <strong>Billing & Invoicing Systems:</strong> We engineer high-security billing software, GST invoicing, student fee collection systems, recurring E-NACH mandates, and multi-gateway integrations (Razorpay, NTT Data/Atom) with automated reconciliation.';
+  } else if (q.includes('brochure') || q.includes('visiting') || q.includes('card') || q.includes('logo') || q.includes('design') || q.includes('adobe')) {
+    return '🎨 <strong>Adobe Creative Suite Design:</strong> We design multi-page corporate brochures, luxury visiting cards (embossed & spot UV), vector logos, and complete brand style guides in Adobe Illustrator, InDesign, and Photoshop.';
+  } else if (q.includes('cloud') || q.includes('backend') || q.includes('api') || q.includes('fastapi') || q.includes('database')) {
+    return '☁️ <strong>Cloud Infrastructure:</strong> High-performance FastAPI & Node.js backend services, PostgreSQL database clustering, Wasabi S3 encrypted object storage, and Redis caching built for 99.98% production uptime.';
   } else if (q.includes('price') || q.includes('cost') || q.includes('estimate') || q.includes('quote')) {
-    return '💡 <strong>Project Pricing:</strong> You can use our live <em>Project Cost Calculator</em> above to get an instant scope! Custom apps typically range from $2,500 to $9,000 depending on features and Claude AI integrations. Let\'s schedule a call!';
+    return '💡 <strong>Project Consultation:</strong> Reach out via our contact form to discuss scope and get an accurate technical estimate tailored to your requirements!';
   } else {
-    return '✨ <strong>VP Tech Labs:</strong> Founded by <strong>Vijay & Prafeep</strong>, we build Mobile Apps, Enterprise Web SaaS, Billing & Invoicing software, E-Commerce, and Corporate Brochures. Email us at <a href="mailto:vijay@unique-creations.biz" style="color:#38bdf8;">vijay@unique-creations.biz</a> to get started!';
+    return '✨ <strong>VP Tech Labs:</strong> We build Mobile Apps, Enterprise Web SaaS, Billing & Invoicing software, E-Commerce, and Corporate Brochures & Visiting Cards. Email us directly at <a href="mailto:vijay@unique-creations.biz" style="color:#38bdf8;">vijay@unique-creations.biz</a> to get started!';
   }
 }
 
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
-  initCalculator();
+  startSliderAutoplay();
 });

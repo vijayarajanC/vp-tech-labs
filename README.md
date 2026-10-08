@@ -1,19 +1,18 @@
 # VP Tech Labs - Official Website
 
-**VP Tech Labs** (Founded by **Vijay & Prafeep**) — Modern software engineering, cross-platform mobile apps, enterprise billing & invoicing systems, and Claude-powered AI automation.
+**VP Tech Labs** — Modern software engineering, cross-platform mobile apps, enterprise billing & invoicing systems, and scalable cloud architecture.
 
 ---
 
-## 🚀 Key Features
+## 🚀 Key Specializations
 
 1. **Mobile App Development**: Cross-platform iOS & Android engineering (React Native, Expo, Flutter, Swift, Kotlin).
 2. **Billing & Invoicing Software**: Fee collections, GST receipts, automated recurring E-NACH bank mandates, Razorpay & NTT Data payment gateways.
 3. **Enterprise Web & SaaS**: Multi-tenant cloud architectures, Next.js, FastAPI, Node.js, and PostgreSQL.
 4. **Brochure & UI/UX Design**: Digital flipbooks, 300 DPI print prospectuses, brand identity & Figma design tokens.
-5. **Claude AI & OCR Automation**: Anthropic Claude 3.5 Sonnet smart document extraction, conversational assistants, and grading automation.
-6. **Interactive Project Cost Calculator**: Instant estimation for client scopes.
-7. **Interactive Brochure Modal**: Built-in 3-page flipbook presentation with print/download support.
-8. **Simulated Claude AI Assistant**: Interactive chatbot ready to answer client questions.
+5. **High-Speed Cloud Infrastructure**: Microservices, Wasabi S3 encrypted storage, Redis caching, and automated deployment pipelines.
+6. **Capabilities & Tech Matrix Slider**: Interactive carousel showcasing full-stack domain competencies.
+7. **Adobe Creative Suite Design**: Corporate brochures, luxury visiting cards, and vector logos.
 
 ---
 
@@ -22,40 +21,27 @@
 You can open `index.html` directly in any browser:
 
 ```bash
-# Using Python built-in server (from the website folder):
-cd website
+# Run local dev server:
+npm start
+# Or using Python:
 python3 -m http.server 3000
 # Then open http://localhost:3000
 ```
 
 ---
 
-## ⚡ How to Deploy Free (For Claude Startups Application)
+## ⚡ How to Deploy
 
 ### Option 1: GitHub Pages (100% Free `github.io` domain)
-1. Push this `website` folder to a GitHub repository (e.g. `https://github.com/username/vp-tech-labs`).
+1. Push this repository to GitHub (e.g. `https://github.com/username/vp-tech-labs`).
 2. Go to **Repo Settings** → **Pages** → Source: **Deploy from a branch (`main` / root)**.
-3. Your live website will be instantly published at:  
-   `https://<your-username>.github.io/vp-tech-labs`
+3. Your live website will be published at: `https://<your-username>.github.io/vp-tech-labs`
 
-### Option 2: Vercel (Instant 30-Second Deploy)
-1. Run:
-   ```bash
-   cd website
-   npx vercel
-   ```
-2. Your live URL will be `https://vp-tech-labs.vercel.app`.
+### Option 2: Vercel
+```bash
+npx vercel
+```
 
 ### Option 3: Netlify Drop
 1. Go to [app.netlify.com/drop](https://app.netlify.com/drop)
-2. Drag and drop the `website` folder.
-3. Instant live link: `https://vp-tech-labs.netlify.app`.
-
----
-
-## 📋 Info for Claude Startups Application:
-* **Company Name**: `VP Tech Labs` (or `VP Technologies`)
-* **Job Title**: `Co-Founder & Lead Engineer`
-* **Website URL**: `https://<your-github-or-vercel-url>` or `https://unique-creations.biz`
-* **Leadership**: Vijay & Prafeep
-* **Contact Email**: `vijay@unique-creations.biz`
+2. Drag and drop this project directory.
